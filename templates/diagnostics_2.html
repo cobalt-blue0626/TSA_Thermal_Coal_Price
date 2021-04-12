@@ -1,0 +1,25 @@
+{% extends  "base.html" %}
+{% block title%} Diagnostics {% endblock %}
+{% block content %}
+	{% with messages = get_flashed_messages() %}
+		{% if messages %}
+			{% for msg in messages %}
+				<p>{{msg}}</p>
+			{% endfor %}
+		{% endif %}
+	{% endwith %}
+
+	<br>The shapiro normality test has H0: residuals are normally distributed, Ha: residuals aren't normally distributed</br>
+	<br>p-value = {{nor_t}}</br>
+	{% for table in est_table %}
+            {{ table|safe }}
+    {% endfor %}
+	<br>AIC = {{AIC}}</br>
+	<div style="width: 20%; display: inline-block;">
+
+        {{ div | safe }}
+        {{ script | safe }}
+
+    </div>
+
+{% endblock%}

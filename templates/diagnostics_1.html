@@ -1,0 +1,35 @@
+{% extends  "base.html" %}
+{% block title%} Choosing Model {% endblock %}
+{% block content %}
+	{% with messages = get_flashed_messages() %}
+		{% if messages %}
+			{% for msg in messages %}
+				<p>{{msg}}</p>
+			{% endfor %}
+		{% endif %}
+	{% endwith %}
+	<form action="#", method = "post">
+		<p>Define the parameter of ARMA model (p, q)</p>
+		<br>For p in AR:</br>
+		<p><select name="AR">
+			<option value="0">0</option>
+			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5</option>
+		</select></p>
+		<p>For q in MA:</p>
+		<p><select name="MA">
+			<option value="0">0</option>
+			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5</option>
+		</select></p>
+		<br>Is there any exogenous variables of catagorical (input the needed index 0 ~ 119)?</br>
+		<p><input type="number" name="exog" min="0" max="1000"></p>
+		<p><input type="submit" name="submit"></p>
+	</form>
+{% endblock%}

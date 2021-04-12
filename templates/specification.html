@@ -1,0 +1,37 @@
+{% extends  "base.html" %}
+{% block title%} Specification {% endblock %}
+{% block content %}
+	{% with messages = get_flashed_messages() %}
+		{% if messages %}
+			{% for msg in messages %}
+				<p>{{msg}}</p>
+			{% endfor %}
+		{% endif %}
+	{% endwith %}
+	
+	<br>{{sta_test1}}</br>
+	<br>{{sta_test2}}</br>
+	<div style="width: 20%; display: inline-block;">
+
+        {{ div | safe }}
+        {{ script | safe }}
+
+    </div>
+    <br></br>
+    <div style="width: 20%; display: inline-block;">
+
+        {{ div2 | safe }}
+        {{ script2 | safe }}
+
+
+    </div>
+	<br></br>
+    <div style="width: 20%; display: inline-block;">
+
+        {{ div3 | safe }}
+        {{ script3 | safe }}
+
+
+    </div>
+
+{% endblock%}

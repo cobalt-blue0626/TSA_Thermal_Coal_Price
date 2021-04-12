@@ -1,0 +1,34 @@
+{% extends  "base.html" %}
+{% block title%}BEGINNING{% endblock %}
+{% block content %}
+	{% with messages = get_flashed_messages() %}
+		{% if messages %}
+			{% for msg in messages %}
+				<p>{{msg}}</p>
+			{% endfor %}
+		{% endif %}
+	{% endwith %}
+	<form action="#" method="post">
+		<p>Model Specification or Diagnostics?</p>
+		<p><select name="model">
+			<option value="1">Specification</option>
+			<option value="2">Diagnostics</option>
+		</select></p>
+		<p>DATA</p>
+		<p><select name="data">
+			<option value="1">Australia</option>
+			<option value="2">Indonesia</option>
+		</select></p>
+		<p>Take difference or not</p>
+		<p><select name="diff">
+			<option value="1">Yes</option>
+			<option value="0">No</option>
+		</select></p>
+		<p>Take log or not</p>
+		<p><select name="log">
+			<option value="1">Yes</option>
+			<option value="0">No</option>
+		</select></p>
+		<p><input type="submit" name="submit"></p>
+	</form>
+{% endblock%}
